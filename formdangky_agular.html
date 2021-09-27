@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+h1{
+    text-align: center;
+    color: red;
+}
+
+button{
+   margin-left: 220px;
+}
+textarea{
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  outline: none;
+	margin-top: 8px;
+  width: 540px;
+}
+form{
+    background-color: bisque;
+    border-radius: 20px;
+    }
+
+</style>
+<body ng-app="b3" ng-controller="ctr1">
+    <h1>Đăng kí thành viên</h1>
+    <form name="frm" class="col-5 mx-auto border border-primary">
+        <div class="form-group">
+            <label>Mã sinh viên</label>
+            <input name="masv" class="form-control bg-primary" ng-model="masv" required minlength="2" maxlength="30">
+            <em ng-if="frm.masv.$invalid" class="text-danger h6">Nhập mã sinh viên! </em>
+        </div>
+        <div class="form-group">
+            <label>Họ và Tên</label>
+            <input name="tensp" class="form-control bg-primary" ng-model="tensv" required minlength="2" maxlength="30">
+            <em ng-if="frm.tensp.$invalid" class="text-danger h6">Nhập tên sinh viên !</em>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input name="email" class="form-control bg-warning" ng-model="email" required type="email">
+            <em ng-if="frm.email.$invalid "class="text-danger h6">Nhập đúng định dạng @email !</em>
+        </div>
+        <div class="form-group">
+            <label>Giới tính</label>
+            <fieldset class="border border-secondary p-3">
+                <input name="gioitinh" type="radio" value="1" ng-model="gioitinh"> Nam &nbsp;
+                <input name="gioitinh" type="radio" value="2" ng-model="gioitinh"> Nữ
+                <em ng-if="!gioitinh" class="text-danger h6"><br>Chọn một giới tính !</em>
+            </fieldset>
+        </div>
+        <div class="from-group">
+            <label>Sở thích</label>
+            <fieldset class="border border-secondary p-3">
+                <input value="docsach" type="checkbox" ng-model="docsach"> Đọc sách &nbsp;
+                <input value="dulich" type="checkbox" ng-model="dulich"> Du lịch &nbsp;
+                <input value="amthuc" type="checkbox" ng-model="amthuc"> Âm nhạc 
+                <input value="khac" type="checkbox" ng-model="khac"> Khác 
+                <em ng-if="!docsach && !dulich && !amthuc && !khac" class="text-danger h6"><br>Sở thích là gì ?</em>
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <label>Quốc tịch</label>
+            <select name="quoctich" class="form-control bg-secondary text-white" ng-model="quoctich">
+                <option value="0" required>Chọn Quốc tịch</option>
+                <option value="1" required>Việt Nam</option>
+                <option value="3" required>Hàn Quốc</option>
+                <option value="3" required>Nhật Bản</option>
+            </select>
+            <em ng-if ="!quoctich || quoctich==0"class="text-danger h6">Hãy chọn một quốc tịch !</em> 
+       
+        <div class="form-group">
+                     <label for="text">Ghi chú: </label>
+					<textarea name="text" id="" cols="46" rows="5" id="note" maxlength="200"  ng-model="text"  required minlength="2" maxlength="30"></textarea>
+                    <em ng-if="frm.text.$invalid" class="text-danger h6">Vui lòng nhập ghi chú !!</em>
+                </div>
+        <div class="form-group">
+            <button class="btn btn-info">Đăng ký</button>
+            <br>
+             <em ng-if="frm.$valid" class="text-danger h3">Bạn đã đăng ký thành công</em>
+        </div>
+
+
+
+    </form>
+</body>
+</html>
+<script>
+    app=angular.module("b3",[]);
+    app.controller("ctr1",xuly);
+    function xuly($scope){
+
+    }
+
+</script>

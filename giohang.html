@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bán hàng</title>
+	<link rel="stylesheet" href="css/gioihang.css">
+	<script src="js/giohang.js"></script>
+</head>
+<body>
+	<div class="container">
+		<article>
+			<h1>Bán hàng</h1>
+			<div class="gia">
+				<select name="price" id="" onchange="chonmucgia(this)">
+					<option value="0">Chọn mức giá</option>
+					<option value="1">Dưới 100</option>
+					<option value="2">Từ 100 đến 500</option>
+					<option value="3">Trên 500</option>
+				</select>
+			</div>
+			<div class="bodyban">
+				<table id="bang">
+					<thead>
+						<tr>
+							<td><input type="checkbox" onchange="checkAll(this)"></td>
+							<th>Hàng hóa</th>
+							<th>Đơn giá</th>
+							<th>Số lượng</th>
+							<th>Thành tiền</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox" onchange="changeCheckbox(this)"></td>
+							<td>Iphone</td>
+							<td>400</td>
+							<td><input type="number" value="0" min="0" step="1" disabled onchange="giatien(this)" ></td>
+							<th></th>
+						</tr>
+						<tr>
+							<td><input type="checkbox" onchange="changeCheckbox(this)"></td>
+							<td>SamSung</td>
+							<td>600</td>
+							<td><input type="number" value="0" min="0" step="1" disabled onchange="giatien(this)"></td>
+							<th></th>
+						</tr>
+						<tr>
+							<td><input type="checkbox" onchange="changeCheckbox(this)"></td>
+							<td>Hoco</td>
+							<td>100</td>
+							<td><input type="number" value="0" min="0" step="1" disabled onchange="giatien(this)"></td>
+							<th></th>
+						</tr>
+						<tr>
+							<td><input type="checkbox" onchange="changeCheckbox(this)"></td>
+							<td>Sony </td>
+							<td>700</td>
+							<td><input type="number" value="0" min="0" step="1" disabled onchange="giatien(this)"></td>
+							<th></th>
+						</tr>
+						<tr>
+							<td><input type="checkbox" onchange="changeCheckbox(this)"></td>
+							<td>Motorola</td>
+							<td>80</td>
+							<td><input type="number" value="0" min="0" step="1" disabled onchange="giatien(this)"></td>
+							<th></th>
+						</tr>
+						<tr>
+							<td><input type="checkbox" onchange="changeCheckbox(this)"></td>
+							<td>Oppo</td>
+							<td>800</td>
+							<td><input type="number" value="0" min="0" step="1" disabled onchange="giatien(this)"></td>
+							<th></th>
+						</tr>
+						<tr>
+							<td><input type="checkbox"onchange="changeCheckbox(this)"></td>
+							<td>Nokia</td>
+							<td>100</td>
+							<td><input type="number" value="0" min="0" step="1" disabled onchange="giatien(this)"></td>
+							<th></th>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th colspan="4">Tổng</th>
+							<th id="tongtien"></th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</article>
+	</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTB2</title>
+    <link rel="stylesheet" href="css/ptb2.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Giải Phương Trình Bậc II</h1>
+        <span id="slg">Số lần giải</span>
+        <hr>
+    <b>Nhập số a:</b> <input type="text"id="a">
+    <br>
+    <br>
+    <b>Nhập số b:</b> <input type="text"id="b">
+    <br>
+    <br>
+    <b>Nhập số c:</b> <input type="text"id="c">
+    <br>
+    <br>
+    <button onclick="giai()">Giải PT</button>
+    <button onclick="choso()">Cho số</button>
+    <div class="loigiai">
+        <h3>Kết quả</h3>
+        <div id="pt">Phương trình sẽ hiện ở đây !!</div>
+        <hr>
+        <div id="kq">Kết quả sẽ hiện ở đây </div>
+        <br>
+        
+       
+        <span id="dongho"></span>
+        <br>
+        <span id="ngay"></span>
+    </div>
+   
+    </div>
+    
+</body>
+</html>
+<script>
+    var dh = null;
+    function tg(){
+    var now = new Date();
+    var h = now.getHours();
+    var m = now.getMinutes();
+    var s = now.getSeconds();
+    document.getElementById("dongho").innerHTML= h + ":" + m + ":" + s;
+}
+</script>
+<script>
+    dh = setInterval("tg()",0);
+    function startstopDH(){
+        if(dh==null) dh = setInterval("tg()",0);
+    else{
+        clearInterval(bh)
+        dh=null;
+   }
+}
+</script>
+<script>
+    var slg = 0;
+function choso(){
+            var a= Math.floor(Math.random() * 10);
+            var aa=Math.round(a);
+            document.getElementById("a").value=aa;
+            var b= Math.floor(Math.random() * 10);
+            var bb=Math.round(b);
+            document.getElementById("b").value=bb;
+            var c= Math.floor(Math.random() * 10);
+            var cc=Math.round(c);
+            document.getElementById("c").value=cc;
+
+            str = a + "x<sup>2</sup> + " + b +" x + "+c +"= 0";
+            document.getElementById("pt").innerHTML=str;
+        }
+
+function giai(){
+    a= document.getElementById("a").value;
+    b= document.getElementById("b").value;
+    c= document.getElementById("c").value;
+     var delta = b*b-4*a*c;
+    if (isNaN(a)||isNaN(b)||isNaN(c)){
+        alert("Hãy nhập vào số!!")
+    }
+    else if (delta<0){
+        document.getElementById("kq").innerHTML="Phương trình vô nghiệm"
+    }
+    else if(delta ==0){
+        x= -b/(2*a)
+        document.getElementById("kq").innerHTML="Phương trình có nghiệm kép là: <br> x1= " + " <br>x2 = " + x 
+    }
+    else if (delta >0){
+        x1 = (-b+Math.sqrt(delta))/(2*a)
+        x2 = (-b-Math.sqrt(delta))/(2*a)
+        document.getElementById("kq").innerHTML="<p>Phương trình có hai nghiệm:</p><p> x1 = " + x1 +"</p> <p> x2 = " + x2 + "</p>"
+    }
+    slg++;
+    document.getElementById("slg").innerHTML = "<b> Số lần giải: </b> "+ "<u>"+ slg+"</u>";
+}    
+
+</script>
+<script>
+
+var today = new Date();
+var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+var dateTime =date;
+document.getElementById("ngay").innerHTML=dateTime;
+</script>

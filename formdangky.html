@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Đăng ký</title>
+	<link rel="stylesheet" href="css/resgist.css">
+	<script src="js/resgist.js"></script>
+
+</head>
+<body>
+			<h1>Đăng kí thành viên</h1>
+			<div class="form">
+				<form action="" onsubmit="return KiemTra()">
+					<label for="student">Mã sinh viên: </label>
+					<input type="text" id="student" name="student">
+					<div id="loi1" class="loi"></div>
+					<br>
+					<label for="name">Họ và tên: </label>
+					<input type="text" name="name" id="name">
+					<div id="loi2" class="loi"></div>
+					<br>
+					<label for="email">Email: </label>
+					<input type="email" name="email" id="email">
+					<div id="loi3" class="loi"></div>
+					<br>
+					<label for="gender">Giới tính: </label>
+					<div class="inp">
+						<input type="radio" name="gender"><span>Nam</span>
+						<input type="radio" name="gender"><span>Nữ</span>
+					</div>
+					<div id="loi4" class="loi"></div>
+					<label for="subject">Sở thích</label>
+					<div class="inp">
+						<input class="sothich" type="checkbox"><span>Đọc sách</span>
+						<input class="sothich" type="checkbox"><span>Du lịch</span>
+						<input class="sothich" type="checkbox"><span>Âm nhạc</span>
+						<input class="sothich" type="checkbox"><span>Ẩm thực</span>
+						<input class="sothich" type="checkbox"><span>Khác</span>
+					</div>
+					<div id="loi5" class="loi"></div>
+					<label for="national">Quốc tịch</label>
+					<select name="national" id="national">
+						<option value="0">Chọn quốc tịch</option>
+						<option value="1">Việt Nam</option>
+						<option value="2">Mỹ</option>
+						<option value="3">Campuchia</option>
+						<option value="4">Nhật Bản</option>
+						<option value="5">Anh</option>
+					</select>
+					<div id="loi6" class="loi"></div>
+					<label for="text">Ghi chú: </label>
+					<textarea name="text" id="" cols="46" rows="5" id="note" maxlength="200" ></textarea>
+					<div id="loi7" class="loi"></div>
+					<Button>Đăng Ký</Button>
+				</form>
+			</div>
+	</div>
+</body>
+</html>
